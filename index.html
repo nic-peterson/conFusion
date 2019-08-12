@@ -64,9 +64,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
-              <span class="fa fa-sign-in"></span> Login</a
-            >
+            <a id="Login"> <span class="fa fa-sign-in"></span> Login</a>
           </span>
         </div>
       </div>
@@ -272,7 +270,11 @@
                   >
                     Cancel
                   </button>
-                  <button type="submit" class="btn btn-primary">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="reserveButton"
+                  >
                     Reserve
                   </button>
                 </div>
@@ -299,9 +301,8 @@
           <div class="col-12 col-sm align-self-center">
             <a
               role="button"
+              id="reserveTable"
               class="btn btn-block nav-link btn-warning"
-              data-toggle="modal"
-              data-target="#reserveModal"
             >
               Reserve Table
             </a>
@@ -577,6 +578,12 @@
               .addClass("fa-pause");
           }
         });
+      });
+      $("#reserveTable").click(function() {
+        $("#reserveModal").modal("show");
+      });
+      $("#Login").click(function() {
+        $("#loginModal").modal("show");
       });
     </script>
   </body>
